@@ -27,9 +27,7 @@ write.csv(imsig_res, "ImSig_results.csv", row.names=TRUE)
 library(ggplot2)
 library(tidyr)
 
-if("Translation" %in% colnames(imsig_res)) {
-    imsig_res <- imsig_res[, colnames(imsig_res) != "Translation"]
-}
+
 imsig_perc <- sweep(imsig_res, 1, rowSums(imsig_res), FUN="/") * 100
 
 clean_names <- gsub("\\.Aligned\\.sortedByCoord\\.out\\.bam", "", rownames(imsig_perc))
