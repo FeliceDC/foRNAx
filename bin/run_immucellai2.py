@@ -6,7 +6,7 @@ import immucellai2
 fc_file = sys.argv[1]
 threads = sys.argv[2] if len(sys.argv) > 2 else 4
 # Cattura il parametro del tessuto da Nextflow (default: tumor)
-tissue = sys.argv[3].lower() if len(sys.argv) > 3 else "tumor"
+ref_type = sys.argv[3].lower() if len(sys.argv) > 3 else "tumor"
 
 print("1. Caricamento della matrice featureCounts...")
 df = pd.read_csv(fc_file, sep='\t', comment='#', index_col=0)
