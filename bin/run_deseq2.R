@@ -164,13 +164,14 @@ for (pair in contrast_pairs) {
     dev.off()
     
 # 4. Heatmap Top 50 
-top_genes <- head(order(res$padj), 50) 
-if (length(top_genes) > 1) { 
-mat <- assay(vsd)[top_genes, ] 
-mat <- mat - rowMeans(mat) 
-colori_heatmap <- colorRampPalette(c("blue", "white", "red"))(256) 
-heatmap(mat, scale="none", col=colori_heatmap, margins=c(8, 12), cexCol=0.9, cexRow=0.5, main=paste("Heatmap Top 50:", c_name)) 
-}  
+    top_genes <- head(order(res$padj), 50)
+    if (length(top_genes) > 1) {
+        mat <- assay(vsd)[top_genes, ]
+        mat <- mat - rowMeans(mat)
+        colori_heatmap <- colorRampPalette(c("blue", "white", "red"))(256)
+    
+        heatmap(mat, scale="none", col=colori_heatmap, margins=c(12, 12), cexCol=0.5, cexRow=0.5, main=paste("Heatmap Top 50:", c_name))
+    }
     
     # 5. Top 6 geni (specifici per il contrasto)
     top6_genes <- head(order(res$padj), 6)
