@@ -84,7 +84,7 @@ if (!params.skip_differential) {
         }
 
         if (!params.skip_deconvolution) {
-            IMMUCELLAI(FEATURECOUNTS.out.counts)
+            IMMUCELLAI(FEATURECOUNTS.out.counts, params.immucell_ref)
             PLOT_DECONVOLUTION(IMMUCELLAI.out.fractions)
             IMSIG(FEATURECOUNTS.out.counts)
             
