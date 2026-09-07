@@ -103,7 +103,7 @@ if (!params.skip_differential) {
             
             ch_rmats_results = RMATS.out.splicing_results
             ch_rmats_plots   = RMATS_PLOT.out.plots
-            ch_rmats_sashimi = RMATS_SASHIMI.out.plots
+            ch_rmats_sashimi = RMATS_SASHIMI.out.pdf_plots
             ch_rmats_multiqc = RMATS_PLOT.out.multiqc_png
         }
 
