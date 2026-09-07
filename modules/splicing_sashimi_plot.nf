@@ -9,8 +9,8 @@ process SASHIMI_PLOT {
     path rmats_files 
 
     output:
-    path "sashimi_out/Sashimi_plot/*.pdf", emit: plots,
-    path "sashimi_out/Sashimi_plot/*_mqc.png", emit: multiqc_png,
+    path "sashimi_out/Sashimi_plot/*.pdf", emit: plots
+    path "sashimi_out/Sashimi_plot/*_mqc.png", emit: multiqc_png
 
     script:
     """
@@ -19,7 +19,7 @@ import csv, os, glob
 bams = glob.glob('*.bam')
 groups = {}
 
-# Estrae dinamicamente l'ultima variabile del design passato da utente
+
 design_string = '${params.design}'
 main_cond = [x.strip() for x in design_string.split('+')][-1]
 
