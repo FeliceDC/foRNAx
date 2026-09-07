@@ -9,8 +9,8 @@ process SASHIMI_PLOT {
     path rmats_files 
 
     output:
-    path "sashimi_out/Sashimi_plot/*.pdf", emit: plots
-    path "sashimi_out/Sashimi_plot/*_mqc.png", emit: multiqc_png
+    path "sashimi_out/Sashimi_plot/*_mqc.png", emit: multiqc_png, optional: true
+    path "sashimi_out/Sashimi_plot/*.pdf"    , emit: pdf_plots
 
     script:
     """
