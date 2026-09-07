@@ -23,7 +23,7 @@ tpm = rpk.div(rpk.sum(axis=0) / 1e6, axis=1)
 tpm_file = "tpm_matrix.txt"
 tpm.to_csv(tpm_file, sep='\t')
 
-print(f"3. Avvio di ImmuCellAI 2.0 (Deconvoluzione con reference: {tissue.upper()})...")
+print(f"3. Avvio di ImmuCellAI 2.0 (Deconvoluzione con reference: {ref_type.upper()})...")
 
 if ref_type == "blood":
     ref_data = immucellai2.load_blood_reference_data()
