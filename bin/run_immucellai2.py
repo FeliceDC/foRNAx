@@ -25,7 +25,7 @@ tpm.to_csv(tpm_file, sep='\t')
 
 print(f"3. Avvio di ImmuCellAI 2.0 (Deconvoluzione con reference: {tissue.upper()})...")
 
-if tissue == "blood":
+if ref_type == "blood":
     ref_data = immucellai2.load_blood_reference_data()
 else:
     ref_data = immucellai2.load_tumor_reference_data()
