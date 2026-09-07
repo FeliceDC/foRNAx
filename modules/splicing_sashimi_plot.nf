@@ -49,7 +49,8 @@ with open('label2.txt', 'w') as l2: l2.write(conds[1])
     L1=\$(cat label1.txt)
     L2=\$(cat label2.txt)
 
-    head -n 6 SE.MATS.JC.txt > top5_SE.txt
+head -n 1 SE.MATS.JC.txt > top5_SE.txt
+grep -E "\bchr([1-9]|1[0-9]|2[0-2]|X|Y)\b" SE.MATS.JC.txt | head -n 5 >> top5_SE.txt
     
     rmats2sashimiplot \\
         --b1 b1.txt \\
