@@ -87,7 +87,7 @@ if (nrow(dds) < 1000) {
 }
 
 # --- PLOTS ---
-pdf("deseq2_plots.pdf", width = 10, height = 7)
+pdf("deseq2_plots.pdf", width = 16, height = 7)
 
 pca_data <- plotPCA(vsd, intgroup = colnames(meta), returnData = TRUE)
 percentVar <- round(100 * attr(pca_data, "percentVar"))
@@ -163,18 +163,16 @@ for (pair in contrast_pairs) {
     abline(h=-log10(user_pvalue), col="blue", lty=2)
     dev.off()
     
-  # 4. Heatmap Top 50
+ # 4. Heatmap Top 50 
     top_genes <- head(order(res$padj), 50)
     if (length(top_genes) > 1) {
         mat <- assay(vsd)[top_genes, ]
         mat <- mat - rowMeans(mat)
-       
-        pheatmap::pheatmap(mat,
-                           scale = "none",
-                           main = paste("Heatmap Top 50:", c_name),
-                           fontsize_row = 6, 
-                           fontsize_col = 10)
+        colori_heatmap <- colorRampPalette(c("blue", "white", "red"))(256)
+    
+        heatmap(mat, scale="none", col=colori_heatmap, margins=c(12, 12), cexCol=0.3, cexRow=0.5, main=paste("Heatmap Top 50:", c_name))
     }
+
     
     # 5. Top 6 geni (specifici per il contrasto)
     top6_genes <- head(order(res$padj), 6)
