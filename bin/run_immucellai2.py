@@ -33,7 +33,7 @@ else:
 immucellai2.run_ImmuCellAI2(
     reference_file=ref_data,
     sample_file=tpm_file,
-    output_file="ImmuCellAI2_results.xlsx",
+    output_file="ImmuCellAI2_{ref_type}_results.xlsx",
     thread_num=int(threads)
 )
 print("Analisi completata con successo!")
