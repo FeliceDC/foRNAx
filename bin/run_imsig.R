@@ -40,7 +40,7 @@ p <- ggplot(df_long, aes(x = Sample, y = Percentage, fill = CellType)) +
     
     theme_classic() +
     theme(
-        axis.text.x = element_text(angle = 45, hjust = 1, face = "bold", color = "black", size = 11),
+        axis.text.x = element_text(angle = 45, hjust = 1, face = "bold", color = "black", size = 6),
         axis.text.y = element_text(color = "black", size = 11),
         axis.line = element_line(color = "black", linewidth = 0.5),
         title = element_text(face = "bold", size = 14),
