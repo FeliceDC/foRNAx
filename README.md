@@ -109,3 +109,9 @@ By default, the pipeline creates a results/ directory containing the following s
 - fusions/: Arriba fusion tables and circular/linear .pdf visualizations.
 
 - deconvolution/: Infiltration abundance matrices and comparative plots from ImmuCellAI and ImSig.
+
+
+## Author
+
+#Felice Di Casola
+Laboratory of Molecular Medicine and Genomics, Department of Medicine, Surgery and Dentistry "Scuola Medica Salernitana", University of Salerno, 84081, Baronissi, SA, Italy.
