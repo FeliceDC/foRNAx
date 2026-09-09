@@ -113,5 +113,5 @@ By default, the pipeline creates a results/ directory containing the following s
 
 ## Author
 
-#Felice Di Casola
+**Felice Di Casola**
 Laboratory of Molecular Medicine and Genomics, Department of Medicine, Surgery and Dentistry "Scuola Medica Salernitana", University of Salerno, 84081, Baronissi, SA, Italy.
