@@ -1,5 +1,5 @@
 <h1 align="center">
-   FeliceDC/RNAseq_Pipeline
+   foRNAx
 </h1>
 
 <p align="center">
@@ -9,7 +9,7 @@
 </p>
 
 ## Introduction
-**FeliceDC/RNAseq_Pipeline** is a comprehensive, modular bioinformatics analysis pipeline used for RNA sequencing data. Developed in Nextflow (DSL2), it automates the entire workflow from raw FASTQ reads to advanced downstream analysis (Differential Expression, Splicing, Fusions, and Deconvolution), ensuring reproducibility and scalability.
+**FeliceDC/foRNAx** is a comprehensive, modular bioinformatics analysis pipeline used for RNA sequencing data. Developed in Nextflow (DSL2), it automates the entire workflow from raw FASTQ reads to advanced downstream analysis (Differential Expression, Splicing, Fusions, and Deconvolution), ensuring reproducibility and scalability.
 
 The pipeline is built using Docker containers, meaning you don't need to install any bioinformatics tools manually.
 
@@ -24,7 +24,7 @@ The pipeline is built using Docker containers, meaning you don't need to install
 5. Pipeline QC report (`MultiQC`)
 6. Differential Expression Analysis (`DESeq2`), followed by pathway enrichment (`EnrichR`)
 7. Tumor Deconvolution: Immune and stromal cell infiltration estimation ((`ImmuCellAI`) and (`ImSig`)).
-8. Alternative Splicing: Classical statistical splicing analysis (`rMATS`) compared with Bayesian Deep Learning predictions (`DARTS`), complete with automated Volcano, Bar, and Sashimi plots.
+8. Alternative Splicing: Classical statistical splicing analysis (`rMATS`) complete with automated Volcano, Bar, and Sashimi plots.
 9. Gene Fusions: Structural variant detection (`Arriba`)
 
 
@@ -36,7 +36,7 @@ To run the pipeline on your own samples, you need to provide:
 3. An annotation file
 4. A design matrix (named "samplesheet").
 
-The samplesheet must be a comma-separated values file (.csv). The first column (called "sample") must match the FASTQ file names (excluding the _1.fastq.gz suffix).The second column should contain the variable you want to use for differential analysis. Optionally, you can perform differential analysis using two variables if needed.
+The samplesheet must be a comma-separated values file (.csv). The first column (called "sample") must match the FASTQ file names.The other column should contain the variable you want to use for differential analysis. Optionally, you can perform differential analysis using mutiple variables if needed.
 Example:
 
 **samplesheet.csv**
@@ -54,15 +54,12 @@ Now you should be ready to run the pipeline.
 >[!NOTE]
 >An example running code is
 >```bash
->nextflow run Filic03/RNAseq_Pipeline --input_reads "/Your/Files/Path/*fastq.gz" --fasta "/Your/Genome/Path/GRCh38.primary_assembly.genome.fa" --gtf "/Your/Path/gencode.v49.primary_assembly.annotation.gtf" --design "condition" --samplesheet "/Your/File/Path/samplesheet.csv"
+>Nextflow run FeliceDC/foRNAx --input_reads "/Your/Files/Path/*fastq.gz" --fasta "/Your/Genome/Path" --gtf "/Your/Annotations/Path" --design "condition" --samplesheet "/Your/File/Path"
 >```
 >
 >If you want, you can run Deseq2 with two variables. Then you have to write --design "variable1 + variable2"
->```bash
->nextflow run Filic03/RNAseq_Pipeline --input_reads "/Your/Files/Path/*fastq.gz" --fasta "/Your/Genome/Path/GRCh38.primary_assembly.genome.fa" --gtf "/Your/Path/gencode.v49.primary_assembly.annotation.gtf" --design "condition + age" --samplesheet "/Your/File/Path/samplesheet.csv"
->```
 
- | Parametro | Descrizione |
+ | Flag | Description |
 | :--- | :--- |
 | `--input_reads` | Serve per specificare il percorso in cui si trovano i file fastq.gz |
 | `--fasta` | Serve per specificare il percorso in cui si trova il genoma di riferimento |
@@ -113,5 +110,5 @@ By default, the pipeline creates a results/ directory containing the following s
 
 ## Author
 
-**Felice Di Casola**
+**Felice Di Casola** <p>
 Laboratory of Molecular Medicine and Genomics, Department of Medicine, Surgery and Dentistry "Scuola Medica Salernitana", University of Salerno, 84081, Baronissi, SA, Italy.
