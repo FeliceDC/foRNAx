@@ -13,7 +13,9 @@
 
 The pipeline is built using Docker containers, meaning you don't need to install any bioinformatics tools manually.
 
-<img width="2624" height="1682" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/d12323ad-bb0e-469f-bf15-334c0a9c1245" />
+<img width="1676" height="888" alt="image" src="https://github.com/user-attachments/assets/ef5e37ac-adf6-46db-8781-3ee37d9cfdba" />
+
+ />
 
 
 ## Pipeline Summary
