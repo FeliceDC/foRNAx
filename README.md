@@ -62,6 +62,8 @@ Now you should be ready to run the pipeline.
 >If you want, you can run Deseq2 with two variables. Then you have to write --design "variable1 + variable2"
 
 
+There are two list of the flags that you have to specify in the command string. <p>
+**Necessary flags**
  | Flag | Description |
 | :--- | :--- |
 | `--input_reads` | Serve per specificare il percorso in cui si trovano i file fastq.gz |
@@ -69,16 +71,16 @@ Now you should be ready to run the pipeline.
 | `--gtf` | Serve per specificare il percorso in cui si trova il file per le annotazioni genomiche |
 | `--samplesheet` | Serve per specificare il percorso in cui si trova il samplesheet di riferimento |
 
-**optional flags**
+**Optional flags**  <p>
 
  | Flag | Description |
 | :--- | :--- |
-| `--skip_fusions` | Salta l'analisi delle fusioni geniche (Arriba) |
-| `--skip_deconvolution` | Salta la stima dell'infiltrazione cellulare |
-| `--skip_differential` | Salta l'analisi differenziale (DESeq2/EnrichR) |
-| `--skip_splicing` | Salta l'analisi dello splicing alternativo (RMats/LeafCutter) |
+| `--skip_fusions true` | Salta l'analisi delle fusioni geniche (Arriba) |
+| `--skip_deconvolution true` | Salta la stima dell'infiltrazione cellulare |
+| `--skip_differential true` | Salta l'analisi differenziale (DESeq2/EnrichR) |
+| `--skip_splicing true` | Salta l'analisi dello splicing alternativo (RMats/LeafCutter) |
 | `--g gene_name` | Questo parametro riguarda l'esecuzione di Feature Count. La pipeline è impostata di default ad usare `gene_id``. Se invece si desidera ottenere questo tipo di output, aggiungere questo parametro |
-| `--strandedness` | La pipeline è impostata di default per utilizzare strandedness 0, ma puoi selezionare a piacere tra 0, 1 e 2 |
+| `--strandedness 0/1/2` | La pipeline è impostata di default per utilizzare strandedness 0, ma puoi selezionare a piacere tra 0, 1 e 2 |
 | `--immucell_ref blood` | Permette di impostare il database di riferimento utilizzato dalla pipeline per realizzare la deconvoluzione immunitaria di Imsig. Di base, il tool utilizza “load_tumor_reference_data()”, se invece si desidera  “load_blood_reference_data()” bisogna utilizzare questo parametro |
 | `--deseq2_pvalue` | Permette di impostare il valore di p-value per il filtraggio dei risultati di Deseq2. Di base, la pipeline utilizza pvalue=0.05 |
 | `--deseq2_logfc` | Permette di impostare il valore di log fold change per il filtraggio dei risultati di Deseq2. Di base, la pipeline utilizza logfc=1.5 |
