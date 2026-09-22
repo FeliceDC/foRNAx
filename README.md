@@ -57,11 +57,11 @@ Now you should be ready to run the pipeline.
 >Nextflow run FeliceDC/foRNAx --input_reads "/Your/Files/Path/*fastq.gz" --fasta "/Your/Genome/Path" --gtf "/Your/Annotations/Path" --design "condition" --samplesheet "/Your/File/Path"
 >```
 >
->If you want, you can run Deseq2 with two variables. Then you have to write --design "variable1 + variable2"
+>If you want, you can run Deseq2 with two variables. Then you have to write --design "variable1 + variable2" <p>
 
-#Flags
+
 There are two list of the flags that you have to specify in the command string. <p>
-**Necessary flags**
+**Necessary flags** <p>
  | Flag | Description |
 | :--- | :--- |
 | `--input_reads` | Serve per specificare il percorso in cui si trovano i file fastq.gz |
@@ -73,12 +73,12 @@ There are two list of the flags that you have to specify in the command string. 
 
  | Flag | Description |
 | :--- | :--- |
-| `--skip_fusions true` | Salta l'analisi delle fusioni geniche (Arriba) |
-| `--skip_deconvolution true` | Salta la stima dell'infiltrazione cellulare |
-| `--skip_differential true` | Salta l'analisi differenziale (DESeq2/EnrichR) |
-| `--skip_splicing true` | Salta l'analisi dello splicing alternativo (RMats/LeafCutter) |
-| `--g gene_name` | Questo parametro riguarda l'esecuzione di Feature Count. La pipeline è impostata di default ad usare `gene_id``. Se invece si desidera ottenere questo tipo di output, aggiungere questo parametro |
-| `--strandedness 0/1/2` | La pipeline è impostata di default per utilizzare strandedness 0, ma puoi selezionare a piacere tra 0, 1 e 2 |
+| `--skip_fusions true` | Skip the gene fusion analysis (Arriba) |
+| `--skip_deconvolution true` | Skip the estimation of cellular infiltration (ImSig / ImmucellAI |
+| `--skip_differential true` | Skip the differential and pathways analysis (DESeq2 / EnrichR) |
+| `--skip_splicing true` | Skip the alternative splicing analysis (rMATS-turbo) |
+| `--g gene_name` | This parameter controls the execution of FeatureCounts. By default, the pipeline is configured to use `gene_id`. If this type of output is desired instead, add this parameter |
+| `--strandedness 0/1/2` | The pipeline is configured by default to use strandedness 0, but you can select any value among 0, 1, and 2 |
 | `--immucell_ref blood` | Permette di impostare il database di riferimento utilizzato dalla pipeline per realizzare la deconvoluzione immunitaria di Imsig. Di base, il tool utilizza “load_tumor_reference_data()”, se invece si desidera  “load_blood_reference_data()” bisogna utilizzare questo parametro |
 | `--deseq2_pvalue` | Permette di impostare il valore di p-value per il filtraggio dei risultati di Deseq2. Di base, la pipeline utilizza pvalue=0.05 |
 | `--deseq2_logfc` | Permette di impostare il valore di log fold change per il filtraggio dei risultati di Deseq2. Di base, la pipeline utilizza logfc=1.5 |
