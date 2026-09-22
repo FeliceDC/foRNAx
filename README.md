@@ -58,7 +58,7 @@ Now you should be ready to run the pipeline.
 >```
 >
 >If you want, you can run Deseq2 with two variables. Then you have to write --design "variable1 + variable2"
-<p></p>
+
 #Flags
 There are two list of the flags that you have to specify in the command string. <p>
 **Necessary flags**
