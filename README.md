@@ -15,8 +15,6 @@ The pipeline is built using Docker containers, meaning you don't need to install
 
 <img width="1676" height="888" alt="image" src="https://github.com/user-attachments/assets/ef5e37ac-adf6-46db-8781-3ee37d9cfdba" />
 
- />
-
 
 ## Pipeline Summary
 1. Raw read QC (`FastQC`)
@@ -60,8 +58,8 @@ Now you should be ready to run the pipeline.
 >```
 >
 >If you want, you can run Deseq2 with two variables. Then you have to write --design "variable1 + variable2"
-
-
+<p></p>
+#Flags
 There are two list of the flags that you have to specify in the command string. <p>
 **Necessary flags**
  | Flag | Description |
