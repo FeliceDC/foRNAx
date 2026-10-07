@@ -13,8 +13,7 @@
 
 The pipeline is built using Docker containers, meaning you don't need to install any bioinformatics tools manually.
 
-<img width="1676" height="888" alt="image" src="https://github.com/user-attachments/assets/ef5e37ac-adf6-46db-8781-3ee37d9cfdba" />
-
+<img width="960" height="509" alt="image" src="https://github.com/user-attachments/assets/a3bf5e5d-2e2d-43e2-9ecc-331df4f22128" />
 
 ## Pipeline Summary
 1. Raw read QC (`FastQC`)
