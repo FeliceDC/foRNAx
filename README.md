@@ -63,10 +63,10 @@ There are two list of the flags that you have to specify in the command string. 
 **Necessary flags** <p>
  | Flag | Description |
 | :--- | :--- |
-| `--input_reads` | Serve per specificare il percorso in cui si trovano i file fastq.gz |
-| `--fasta` | Serve per specificare il percorso in cui si trova il genoma di riferimento |
-| `--gtf` | Serve per specificare il percorso in cui si trova il file per le annotazioni genomiche |
-| `--samplesheet` | Serve per specificare il percorso in cui si trova il samplesheet di riferimento |
+| `--input_reads` | Specifies the path to the directory containing the `fastq.gz` files |
+| `--fasta` | Specifies the path to the reference genome file |
+| `--gtf` | Specifies the path to the genomic annotation file |
+| `--samplesheet` | Specifies the path to the samplesheet file |
 
 **Optional flags**  <p>
 
@@ -78,15 +78,15 @@ There are two list of the flags that you have to specify in the command string. 
 | `--skip_splicing true` | Skip the alternative splicing analysis (rMATS-turbo) |
 | `--g gene_name` | This parameter controls the execution of FeatureCounts. By default, the pipeline is configured to use `gene_id`. If this type of output is desired instead, add this parameter |
 | `--strandedness 0/1/2` | The pipeline is configured by default to use strandedness 0, but you can select any value among 0, 1, and 2 |
-| `--immucell_ref blood` | Permette di impostare il database di riferimento utilizzato dalla pipeline per realizzare la deconvoluzione immunitaria di Imsig. Di base, il tool utilizza “load_tumor_reference_data()”, se invece si desidera  “load_blood_reference_data()” bisogna utilizzare questo parametro |
-| `--deseq2_pvalue` | Permette di impostare il valore di p-value per il filtraggio dei risultati di Deseq2. Di base, la pipeline utilizza pvalue=0.05 |
-| `--deseq2_logfc` | Permette di impostare il valore di log fold change per il filtraggio dei risultati di Deseq2. Di base, la pipeline utilizza logfc=1.5 |
-| `--single_end true` |  La pipeline è impostata per gestire autonomamente dati del tipo PAIRED END. Se invece si stanno usando dati del tipo SINGLE END aggiungere questo parametro |
-| `--enrichr_database` | Spericificare i database da voler utilizzare tra quelli nativamente supportati da EnrichR |
-| `--outdir` | Puoi specificare una cartella diversa in cui verranno salvati i risultati |
-| `--max_cpus` | Puoi selezionare il numero massimo di cpu da impiegare. Il valore di default è impostato a 16 |
-| `--max_memory` | Puoi selezionare la quantità di ram da impiegare. Il valore di default è impostato a 64 GB |
-| `--max_time` | Puoi selezionare la quantità massima di tempo da dedicare all'analisi. Il valore di default è impostato a 24 h |
+| `--immucell_ref blood` | Allows you to specify the reference database used by the pipeline for ImSig immune deconvolution. By default, the tool uses `load_tumor_reference_data()`. To use `load_blood_reference_data()` instead, set this parameter |
+| `--deseq2_pvalue` | Allows you to set the p-value threshold used to filter DESeq2 results. By default, the pipeline uses `pvalue = 0.05` |
+| `--deseq2_logfc` | Allows you to set the log fold change threshold used to filter DESeq2 results. By default, the pipeline uses `logfc = 1.5` |
+| `--single_end true` |  The pipeline is configured to automatically handle PAIRED-END data. If you are using SINGLE-END data instead, add this parameter |
+| `--enrichr_database` | Specifies which databases to use among those natively supported by Enrichr |
+| `--outdir` | Allows you to specify a different directory where the results will be saved |
+| `--max_cpus` | Allows you to specify the maximum number of CPUs to use. The default value is set to 16 |
+| `--max_memory` | Allows you to specify the amount of RAM to allocate. The default value is set to 64 GB |
+| `--max_time` | Allows you to specify the maximum amount of time allocated for the analysis. The default value is set to 24 hours |
 
 
 
